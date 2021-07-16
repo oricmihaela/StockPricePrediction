@@ -48,4 +48,17 @@ plot = go.Figure(data = tesla_data, layout = layout)
 
 #plot(plot) plotting offline
 iplot(plot)
+
+#building the regression model
+from sklearn.model_selection import train_test_split
+#for preprocessing
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
+#for model evaluation
+from sklearn.metrics import mean_squared_error as mse
+from sklearn.metrics import r2_score
+
+
+
+
 print('Code sueceeded')
