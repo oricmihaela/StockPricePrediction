@@ -6,6 +6,16 @@ import chart_studio.plotly as py
 import plotly.graph_objs as go
 from plotly.offline import plot
 
+from sklearn.linear_model import LinearRegression
+#building the regression model
+from sklearn.model_selection import train_test_split
+#for preprocessing
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
+#for model evaluation
+from sklearn.metrics import mean_squared_error as mse
+from sklearn.metrics import r2_score
+
 #for offline plotting
 from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 init_notebook_mode(connected=True)
@@ -49,15 +59,7 @@ plot = go.Figure(data = tesla_data, layout = layout)
 #plot(plot) plotting offline
 iplot(plot)
 
-from sklearn.linear_model import LinearRegression
-#building the regression model
-from sklearn.model_selection import train_test_split
-#for preprocessing
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.preprocessing import StandardScaler
-#for model evaluation
-from sklearn.metrics import mean_squared_error as mse
-from sklearn.metrics import r2_score
+
 
 #split the data into train and test set
 X = np.array(tesla.index).reshape(-1, 1)
